@@ -10,7 +10,7 @@ body {
 }
 
 a { color: #58C267; text-decoration: none; }
-a:hover { color: #58C267; }
+a:hover { color: #58C267; text-decoration: underline; }
 
 hr { border: 0; height: 1px; color: #eee;background-color: #eee; }
 
@@ -40,6 +40,7 @@ pre code { border: 0; padding: 0; background-color: transparent; }
 
 .post { margin: 0 0 1em 0; padding: 0 0 1em 0; clear: left; border-bottom: 1px solid #eee; }
 .post h1 { margin: 0 0 0.2em 0; line-height: 1em; }
+.post h1 a { color: #333; }
 .post .date { font-size: 10pt; color: #666; }
 .post .content { margin: 10px 0 0 0; }
 .post p { margin: 0 0 1em 0;}
