@@ -75,7 +75,7 @@ pre code { border: 0; padding: 0; background-color: transparent; line-height: 0.
 .pagination ul { list-style: none; margin: 0; padding: 0; }
 .pagination li { display: inline-block; }
 .pagination .prev { float: left; width: 100px; }
-.pagination .archive { float: left; width: 500px; text-align: center; }
+.pagination .archive, .pagination .page_number { float: left; width: 500px; text-align: center; }
 .pagination .next { float: left; width: 100px; text-align: right; }
 
 /* --------------------------------------------------
