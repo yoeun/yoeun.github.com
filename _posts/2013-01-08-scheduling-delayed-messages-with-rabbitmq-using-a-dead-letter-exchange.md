@@ -51,7 +51,8 @@ Here's how you do it in C#:
     private const string RETRY_QUEUE = "RetryQueue";
     private const int RETRY_DELAY = 300000; // in ms
 
-    // messages will drop off RetryQueue into WorkExchange for reprocessing
+    // Messages will drop off RetryQueue into WorkExchange for reprocessing
+    // All messages in queue will expire at same rate
     var queueArgs = new Dictionary<string, object> {
         { "x-dead-letter-exchange", WORK_EXCHANGE },
         { "x-message-ttl", RETRY_DELAY }
@@ -68,9 +69,9 @@ Here's how you do it in C#:
 
     while (true) {
         BasicDeliverEventArgs e = (BasicDeliverEventArgs) consumer.Queue.Dequeue();
-        var message = Encoding.UTF8.GetString(e.Body);
         channel.BasicAck(e.DeliveryTag);
 
+        var message = Encoding.UTF8.GetString(e.Body);
         if (!DoSomething(message)) {
             TryAgainLater(message);
         }
@@ -83,4 +84,12 @@ Here's how you do it in C#:
 
 The code above will keep retrying indefinitely. It's a good idea to check against some sort of MAX_RETRY constant. If your messages are JSON strings, it's easy to encode the retry count in the message itself.
 
+#### Notes
 
+There are some things worth mentioning:
+
+* Several different ways make the message drop into the DLX
+  * In a RetryQueue consumer, reject the message and set requeue = false
+  * Set per-queue message TTL when declaring a queue
+  * Set per-message TTL when publishing a message
+* If using per-message TTL, the expired message won't be sent to the DLX until it reaches the front of the queue. See [rabbitmq.com/ttl.html](http://www.rabbitmq.com/ttl.html) for more information
