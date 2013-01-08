@@ -54,8 +54,11 @@
           <br />
           <h4 class="subtitle">Latest posts</h4>
           <ul>
+          {% assign max_posts = 3 %}
           {% for post in site.posts %}
+            {% if forloop.index0 < max_posts %}
             <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+            {% endif %}
           {% endfor %}
           </ul>
         </div>
