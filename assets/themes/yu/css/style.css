@@ -80,7 +80,7 @@ pre code { border: 0; padding: 0; background-color: transparent; line-height: 0.
 /* Footer
 /* -------------------------------------------------- */
 
-footer { clear: both; }
+footer { clear: both; padding: 1em 0; font-size: 10pt; }
  
 footer .logo {
 	display: block;
