@@ -11,7 +11,7 @@ Sometimes you don't want messages in the queue to be read immediately. For examp
 
 #### Dead what? 
 
-When you create a queue (A) bound to exchange (X), you can also specify an exchange (DLX) to redirect expired and rejected messages to. This is the dead letter exchange. Then you have another queue (B) bound to this dead letter exchange (DLX) to consume messages as they drop off the original queue (A).
+When you create a queue (A) bound to an exchange (X), you can also specify an exchange (DLX) to redirect expired and rejected messages to. This is the dead letter exchange. Then you have another queue (B) bound to this dead letter exchange (DLX) to consume messages as they drop off the original queue (A).
 
 In practice, if we wanted to enable retry on failure every 5 minutes, the flow would look like this:
 
