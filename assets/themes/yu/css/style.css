@@ -4,15 +4,20 @@
 
 body {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 10pt;
-	line-height: 1.4em;
+	font-size: 12pt;
+	line-height: 1.5em;
 	color: #333;
 }
 
 a { color: #58C267; text-decoration: none; }
 a:hover { color: #58C267; text-decoration: underline; }
 
+em { font-style:italic; }
+
 hr { border: 0; height: 1px; color: #eee;background-color: #eee; }
+
+ol { list-style: decimal; margin: 0 0 0 2em; }
+ul { list-style: disc; margin: 0 0 0 2em; }
 
 .navbar { background-color: #333; margin: 0 0 20px 0; overflow: auto; }
 .navbar-inner { width: 900px; margin: auto; }
@@ -27,12 +32,14 @@ hr { border: 0; height: 1px; color: #eee;background-color: #eee; }
 /* Page
 /* -------------------------------------------------- */
 
-h1 { font-size: 24pt; font-weight: bold; }
-h4 { font-weight: bold; }
+h1 { font-size: 24pt; font-weight: bold; line-height: 1.5em; }
+h2 { font-size: 20pt; font-weight: bold; line-height: 1.5em; }
+h3 { font-size: 16pt; font-weight: bold; line-height: 1.5em; }
+h4 { font-size: 12pt; font-weight: bold; line-height: 1.5em; }
 
 code { font-size: 9pt; font-family: Menlo, Monaco, "Courier New", monospace; border: 1px solid #ccc; background-color: #eee; padding: 0.1em 0.3em; }
-pre { border: 1px solid #ccc; background-color: #eee; padding: 0.8em; white-space: pre-wrap; margin: 0 0 1em 0; }
-pre code { border: 0; padding: 0; background-color: transparent; }
+pre { border: 1px solid #ccc; background-color: #eee; padding: 0.8em; white-space: pre-wrap; margin: 1em 0 1em 0; }
+pre code { border: 0; padding: 0; background-color: transparent; line-height: 0.8em; }
 
 /* --------------------------------------------------
 /* Post
@@ -43,9 +50,11 @@ pre code { border: 0; padding: 0; background-color: transparent; }
 .post h1 a { color: #333; }
 .post .date { font-size: 10pt; color: #666; }
 .post .content { margin: 10px 0 0 0; }
-.post p { margin: 0 0 1em 0;}
+.post p { margin: 1em 0 1em 0;}
+.post p:first-child { margin-top: 0;}
+.post li p { margin: 0;}
 
-.page-header h1 { border-bottom: 1px solid #eee; padding: 0.5em 0 0.6em 0; margin: 0 0 1em; }
+.page-header h1 { border-bottom: 1px solid #eee; padding: 0em 0 0.6em 0; margin: 0 0 1em; line-height: 1.0em; }
 
 .left-column { width: 700px; float: left; }
 .right-column { width: 180px; margin: 0 0 0 20px; float: left; }
