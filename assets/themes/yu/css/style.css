@@ -16,6 +16,8 @@ em { font-style:italic; }
 
 hr { border: 0; height: 1px; color: #eee;background-color: #eee; }
 
+.clear { clear: both; }
+
 ol { list-style: decimal; margin: 0 0 0 2em; }
 ul { list-style: disc; margin: 0 0 0 2em; }
 
@@ -97,11 +99,14 @@ footer p {
 /* Tags
 /* -------------------------------------------------- */
 
+.tags { clear: both; padding: 1em 0 0 0;}
+
 .tag_box {
 	list-style:none;
 	margin:0;
-	padding:5px 0 ;
+	padding: 5px 0;
 	overflow:hidden;
+	font-size: 10pt;
 }
 
 .tag_box.inline { display: inline; }
