@@ -20,18 +20,18 @@ title: yuser interface
   <ul>
   {% if paginator.previous_page %}
     {% if paginator.previous_page == 1 %}
-      <li class="prev"><a href="/">&larr; Previous</a></li>
+      <li class="prev"><a href="/">&larr; Newer</a></li>
     {% else %}
-      <li class="prev"><a href="/page{{paginator.previous_page}}">&larr; Previous</a></li>
+      <li class="prev"><a href="/page{{paginator.previous_page}}">&larr; Newer</a></li>
     {% endif %}
   {% else %}
-    <li class="prev">&larr; Previous</li>
+    <li class="prev">&larr; Newer</li>
   {% endif %}
   <li class="page_number">{{paginator.page}} of {{paginator.total_pages}}<li>
   {% if paginator.next_page %}
-    <li class="next"><a href="/page{{paginator.next_page}}">Next &rarr;</a></li>
+    <li class="next"><a href="/page{{paginator.next_page}}">Older &rarr;</a></li>
   {% else %}
-    <li class="next ">Next &rarr;</li>
+    <li class="next ">Older &rarr;</li>
   {% endif %}
 </ul>
 </div>
