@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Scheduling delayed messages with RabbitMQ using a Dead Letter Exchange"
+title: "How to schedule or delay messages with RabbitMQ using a Dead Letter Exchange"
 description: ""
 category: 
 tags: [c#, rabbitmq]
