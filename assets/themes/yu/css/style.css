@@ -21,14 +21,14 @@ hr { border: 0; height: 1px; color: #eee;background-color: #eee; }
 ol { list-style: decimal; margin: 0 0 0 2em; }
 ul { list-style: disc; margin: 0 0 0 2em; }
 
-.navbar { background-color: #333; margin: 0 0 20px 0; overflow: auto; }
+.navbar { background-color: #333; width: 100%; height: 50px; margin: 0 0 20px 0; overflow: auto; position: fixed; }
 .navbar-inner { width: 900px; margin: auto; }
 .navbar .brand { color: #fff; font-size: 16pt; float: left; padding: 10px 20px 10px 0px; }
-.navbar .nav { float: left; }
-.navbar .nav li { float: left; padding: 14px 20px 10px 0px; }
-.navbar .logo { float: right; width: 34px; height: 20px; margin: 10px 0px 0 0; }
+.navbar .nav { float: left; list-style: none; }
+.navbar .nav li { float: left; padding: 12px 20px 10px 0px; }
+.navbar .logo { float: right; width: 34px; height: 20px; margin: 15px 0px 0 0; }
 
-.container { width: 900px; margin: auto; }
+.container { width: 900px; margin: auto; padding: 65px 0 0 0;}
 
 /* --------------------------------------------------
 /* Page
