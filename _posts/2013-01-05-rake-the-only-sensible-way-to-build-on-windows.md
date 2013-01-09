@@ -2,8 +2,8 @@
 layout: post
 title: "Rake: The only sensible way to build on Windows"
 description: ""
-category: 
-tags: []
+category: code
+tags: [c#, rake]
 ---
 {% include JB/setup %}
 

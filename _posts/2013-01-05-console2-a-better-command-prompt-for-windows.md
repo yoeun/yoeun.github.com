@@ -3,7 +3,7 @@ layout: post
 title: "Console2: A better command prompt for Windows"
 description: ""
 category: 
-tags: []
+tags: [tools]
 ---
 {% include JB/setup %}
 
