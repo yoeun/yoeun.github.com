@@ -2,7 +2,7 @@
 layout: post
 title: "Making Mono, ASP.NET and rake play nice on OS X"
 description: ""
-category: 
+category: dev
 tags: [mono, rake, asp.net, c#, nancy, osx]
 ---
 {% include JB/setup %}

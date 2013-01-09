@@ -2,7 +2,7 @@
 layout: post
 title: "How to schedule or delay messages with RabbitMQ using a Dead Letter Exchange"
 description: ""
-category: 
+category: dev
 tags: [c#, rabbitmq]
 ---
 {% include JB/setup %}
