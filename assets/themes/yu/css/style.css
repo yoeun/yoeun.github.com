@@ -34,10 +34,12 @@ ul { list-style: disc; margin: 0 0 0 2em; }
 /* Page
 /* -------------------------------------------------- */
 
-h1 { font-size: 24pt; font-weight: bold; line-height: 1.5em; }
-h2 { font-size: 20pt; font-weight: bold; line-height: 1.5em; }
-h3 { font-size: 16pt; font-weight: bold; line-height: 1.5em; }
-h4 { font-size: 12pt; font-weight: bold; line-height: 1.5em; }
+h1, h2, h3, h4 { font-weight: bold; line-height: 1.5em; margin: 0 0 0.5em 0; }
+
+h1 { font-size: 24pt; }
+h2 { font-size: 20pt; }
+h3 { font-size: 16pt; }
+h4 { font-size: 12pt; }
 
 h4.subtitle { color: #999; font-weight: normal; }
 
