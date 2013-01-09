@@ -60,7 +60,7 @@
             <h4 class="subtitle">Latest posts</h4>
             <a href="/archive.html" class="allposts">view all</a>
             <ul class="clear">
-            {% assign max_posts = 5 %}
+            {% assign max_posts = 10 %}
             {% for post in site.posts %}
               {% if forloop.index0 < max_posts %}
               <li><a href="{{ post.url }}">{{ post.title }}</a></li>
