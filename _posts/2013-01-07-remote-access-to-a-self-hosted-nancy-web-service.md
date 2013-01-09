@@ -2,7 +2,7 @@
 layout: post
 title: "Remote access to a self hosted Nancy web service"
 description: ""
-category: 
+category: dev
 tags: [c#, nancy]
 ---
 {% include JB/setup %}

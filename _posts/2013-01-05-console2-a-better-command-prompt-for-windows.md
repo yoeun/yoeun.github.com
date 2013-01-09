@@ -2,7 +2,7 @@
 layout: post
 title: "Console2: A better command prompt for Windows"
 description: ""
-category: 
+category: dev
 tags: [tools]
 ---
 {% include JB/setup %}
