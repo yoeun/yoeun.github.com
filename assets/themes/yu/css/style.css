@@ -22,13 +22,13 @@ ol { list-style: decimal; margin: 0 0 0 2em; }
 ul { list-style: disc; margin: 0 0 0 2em; }
 
 .navbar { background-color: #333; width: 100%; height: 50px; margin: 0 0 20px 0; overflow: auto; position: fixed; }
-.navbar-inner { width: 900px; margin: auto; }
+.navbar-inner { width: 970px; margin: auto; }
 .navbar .brand { color: #fff; font-size: 16pt; float: left; padding: 10px 20px 10px 0px; }
 .navbar .nav { float: left; list-style: none; }
 .navbar .nav li { float: left; padding: 12px 20px 10px 0px; }
 .navbar .logo { float: right; width: 34px; height: 20px; margin: 15px 0px 0 0; }
 
-.container { width: 900px; margin: auto; padding: 65px 0 0 0;}
+.container { width: 970px; margin: auto; padding: 65px 0 0 0;}
 
 /* --------------------------------------------------
 /* Page
@@ -63,7 +63,7 @@ pre code { border: 0; padding: 0; background-color: transparent; line-height: 0.
 .page-header h1 { border-bottom: 1px solid #eee; padding: 0em 0 0.6em 0; margin: 0 0 1em; line-height: 1.0em; }
 
 .left-column { width: 700px; float: left; }
-.right-column { width: 180px; margin: 0 0 0 20px; float: left; font-size: 10pt; }
+.right-column { width: 250px; margin: 0 0 0 20px; float: left; font-size: 10pt; }
 .right-column .date { margin: 0 0 10px 0; }
 
 .right-column ul { list-style: none; margin: 0 0 0 0em; }
