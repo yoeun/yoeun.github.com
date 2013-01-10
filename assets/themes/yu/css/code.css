@@ -1,5 +1,6 @@
 
 /*.highlight pre { background-color:#f8f8f8;border:1px solid #ccc;font-size:13px;line-height:19px;overflow:auto;padding:6px 10px;border-radius:3px } */
+
 .highlight { background:#ffffff } 
 .highlight .c { color:#999988;font-style:italic } 
 .highlight .err { color:#a61717;background-color:#e3d2d2 } 
@@ -70,10 +71,10 @@
 .type-csharp .highlight .s { color:#A31515 } 
 .type-csharp .highlight .sc { color:#A31515 } 
 
-code { font-size: 9pt; font-family: Menlo, Monaco, "Courier New", monospace; }
-pre { border: 1px solid #ccc; background-color: #f8f8f8; padding: 0; white-space: pre-wrap; margin: 0; border-radius:3px }
-
-/*code { font-size: 9pt; font-family: Menlo, Monaco, "Courier New", monospace; border: 1px solid #ccc; background-color: #eee; padding: 0.1em 0.3em; }
-pre { border: 1px solid #ccc; background-color: #eee; padding: 0.8em; white-space: pre-wrap; margin: 1em 0 0em 0; }
-pre code { border: 0; padding: 0; background-color: transparent; line-height: 0.8em; }*/
+/*code { font-size: 9pt; font-family: Menlo, Monaco, "Courier New", monospace; }
+pre { border: 1px solid #ccc; background-color: #f8f8f8; padding: 0.8em; white-space: pre-wrap; margin: 0; border-radius:3px }
+*/
+code { font-size: 9pt; font-family: Menlo, Monaco, "Courier New", monospace; border: 1px solid #ccc; border-radius:3px; background-color: #f8f8f8; padding: 0.1em 0.3em; }
+pre { border: 1px solid #ccc; background-color: #f8f8f8; padding: 0.8em; white-space: pre-wrap; margin: 1em 0 1em 0; border-radius:3px; }
+pre code { border: 0; padding: 0; background-color: transparent; line-height: 0.8em; }
 

@@ -29,11 +29,11 @@ No. With a handy gem called [Albacore](https://github.com/Albacore/albacore), Ra
 
 0. From command line, install Albacore using [RubyGems](http://rubygems.org/), a Ruby package manager. 
 
-       gem install albacore
+        gem install albacore
 
 0. Navigate to your solution directory and create your first rakefile.
 
-       touch rakefile.rb
+        touch rakefile.rb
 
 0. Open up your [favorite text editor](http://www.sublimetext.com/) and edit rakefile.rb
 
