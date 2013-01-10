@@ -96,7 +96,7 @@ The code above will keep retrying indefinitely. It's a good idea to check agains
 
 There are some things worth mentioning:
 
-* Several different ways make the message drop into the DLX
+* Several different ways to make the message drop into the DLX
   * In a RetryQueue consumer, reject the message and set requeue = false
   * Set per-queue message TTL when declaring a queue
   * Set per-message TTL when publishing a message
