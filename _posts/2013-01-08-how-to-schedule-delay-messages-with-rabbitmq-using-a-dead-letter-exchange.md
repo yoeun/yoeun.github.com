@@ -96,8 +96,16 @@ The code above will keep retrying indefinitely. It's a good idea to check agains
 
 There are some things worth mentioning:
 
-* Several different ways to make the message drop into the DLX
-  * In a RetryQueue consumer, reject the message and set requeue = false
-  * Set per-queue message TTL when declaring a queue
-  * Set per-message TTL when publishing a message
-* If using per-message TTL, the expired message won't be sent to the DLX until it reaches the front of the queue. See [rabbitmq.com/ttl.html](http://www.rabbitmq.com/ttl.html) for more information
+Several different ways to make the message drop into the DLX
+
+* In a RetryQueue consumer, reject the message and set requeue = false
+* Set per-queue message TTL when declaring a queue
+* Set per-message TTL when publishing a message
+
+If using per-message TTL, the expired message won't be sent to the DLX until it reaches the front of the queue. See [rabbitmq.com/ttl.html](http://www.rabbitmq.com/ttl.html) for more information
+
+#### References: 
+
+* [Why I'm Moving Away From RabbitMQ](http://senthadev.com/2012/11/07/why-im-moving-away-from-rabbitmq/)
+* [RabbitMQ Dead Letter Exchanges](http://www.rabbitmq.com/dlx.html)
+* [Mailing list: rabbitmq-discuss](http://lists.rabbitmq.com/pipermail/rabbitmq-discuss/2012-April/019387.html)
