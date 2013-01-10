@@ -17,8 +17,10 @@ If you've only ever run [Nancy](http://nancyfx.org) through Visual Studio or IIS
 
 Windows does not allow non-Administrator accounts to run HTTP listeners on arbitrary ports. In this case, port 4567.
 
-    nancyHost = new Nancy.Hosting.Self.NancyHost(new Uri("http://localhost:4567"));
-    nancyHost.Start();
+{% highlight c# %}
+nancyHost = new Nancy.Hosting.Self.NancyHost(new Uri("http://localhost:4567"));
+nancyHost.Start();
+{% endhighlight %}
 
 #### Solution:
 

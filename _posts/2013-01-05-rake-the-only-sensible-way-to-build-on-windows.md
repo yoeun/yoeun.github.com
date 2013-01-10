@@ -69,28 +69,30 @@ As I mentioned earlier, `msbuild` is a function that expects an anonymous functi
 
 In C#, this rakefile would look something like this:
 
-    using Albacore;
+{% highlight c# %}
+using Albacore;
 
-    namespace HelloWorldRakefile
+namespace HelloWorldRakefile
+{
+    class Program
     {
-        class Program
+        static void Main(string[] args)
         {
-            static void Main(string[] args)
-            {
-                var rake = new Rakefile();
+            var rake = new Rakefile();
 
-                rake.AddTask<MSBuildProps>("build", b => {
-                    b.Properties = new Dictionary<string, string> { { "Configuration", "Debug" } };
-                    b.Targets = new [] { "Build" };
-                    b.Solution = "HelloWorld.sln";
-                });
+            rake.AddTask<MSBuildProps>("build", b => {
+                b.Properties = new Dictionary<string, string> { { "Configuration", "Debug" } };
+                b.Targets = new [] { "Build" };
+                b.Solution = "HelloWorld.sln";
+            });
 
-                rake.AddTask("default", "build");
+            rake.AddTask("default", "build");
 
-                rake.Run(args);
-            }
+            rake.Run(args);
         }
     }
+}
+{% endhighlight %}
 
 And you would run it like this:
 
@@ -104,23 +106,25 @@ Now that you're familiar with Rake, you can make this even better by setting up 
 
 This allows you to simply run the `rake` command without specifying a task.
 
-Rake also allows for sequencing tasks together. If we had a `:clean` task, we could update :default to call :clean before calling :build. 
+Rake also allows for sequencing tasks together. If we had a `:clean` task, we could update `:default` to call `:clean` before calling `:build`. 
 
-    require 'albacore'
+{% highlight ruby %}
+require 'albacore'
 
-    msbuild :build do |b|
-        b.properties = { :configuration => :Debug }
-        b.targets = [ :Build ]
-        b.solution = "HelloWorld.sln"
-    end
+msbuild :build do |b|
+    b.properties = { :configuration => :Debug }
+    b.targets = [ :Build ]
+    b.solution = "HelloWorld.sln"
+end
 
-    msbuild :clean do |b|
-        b.properties = { :configuration => :Debug }
-        b.targets = [ :Clean ]
-        b.solution = "HelloWorld.sln"
-    end
+msbuild :clean do |b|
+    b.properties = { :configuration => :Debug }
+    b.targets = [ :Clean ]
+    b.solution = "HelloWorld.sln"
+end
 
-    task :default => [ :clean, :build ]
+task :default => [ :clean, :build ]
+{% endhighlight %}
 
 #### To infinity and beyond
 

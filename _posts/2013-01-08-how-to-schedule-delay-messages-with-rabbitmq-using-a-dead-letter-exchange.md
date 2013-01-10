@@ -30,57 +30,65 @@ Here's how you do it in C#:
 
 #### Create the WorkQueue
 
-    // using RabbitMQ.Client;
+{% highlight c# %}
+// using RabbitMQ.Client;
 
-    private const string WORK_QUEUE = "WorkQueue";
-    private const string WORK_EXCHANGE = "WorkExchange"; // dead letter exchange
-    
-    ConnectionFactory factory = new ConnectionFactory();
-    factory.HostName = "localhost";
-     
-    IConnection connection = factory.CreateConnection();
-    IModel channel = connection.CreateModel();
-     
-    channel.ExchangeDeclare(WORK_EXCHANGE, "direct");
-    channel.QueueDeclare(WORK_QUEUE, true, false, false, null);
-    channel.QueueBind(WORK_QUEUE, WORK_EXCHANGE, string.empty, null);
+private const string WORK_QUEUE = "WorkQueue";
+private const string WORK_EXCHANGE = "WorkExchange"; // dead letter exchange
+
+ConnectionFactory factory = new ConnectionFactory();
+factory.HostName = "localhost";
+ 
+IConnection connection = factory.CreateConnection();
+IModel channel = connection.CreateModel();
+ 
+channel.ExchangeDeclare(WORK_EXCHANGE, "direct");
+channel.QueueDeclare(WORK_QUEUE, true, false, false, null);
+channel.QueueBind(WORK_QUEUE, WORK_EXCHANGE, string.empty, null);
+{% endhighlight %}
 
 #### Create the RetryQueue
 
-    private const string RETRY_EXCHANGE = "RetryExchange";
-    private const string RETRY_QUEUE = "RetryQueue";
-    private const int RETRY_DELAY = 300000; // in ms
+{% highlight c# %}
+private const string RETRY_EXCHANGE = "RetryExchange";
+private const string RETRY_QUEUE = "RetryQueue";
+private const int RETRY_DELAY = 300000; // in ms
 
-    // Messages will drop off RetryQueue into WorkExchange for reprocessing
-    // All messages in queue will expire at same rate
-    var queueArgs = new Dictionary<string, object> {
-        { "x-dead-letter-exchange", WORK_EXCHANGE },
-        { "x-message-ttl", RETRY_DELAY }
-    };
+// Messages will drop off RetryQueue into WorkExchange for reprocessing
+// All messages in queue will expire at same rate
+var queueArgs = new Dictionary<string, object> {
+    { "x-dead-letter-exchange", WORK_EXCHANGE },
+    { "x-message-ttl", RETRY_DELAY }
+};
 
-    channel.ExchangeDeclare(RETRY_EXCHANGE, "direct");
-    channel.QueueDeclare(RETRY_QUEUE, true, false, false, queueArgs);
-    channel.QueueBind(RETRY_QUEUE, RETRY_EXCHANGE, string.empty, null);
+channel.ExchangeDeclare(RETRY_EXCHANGE, "direct");
+channel.QueueDeclare(RETRY_QUEUE, true, false, false, queueArgs);
+channel.QueueBind(RETRY_QUEUE, RETRY_EXCHANGE, string.empty, null);
+{% endhighlight %}
 
 #### Read from WorkQueue
 
-    QueueingBasicConsumer consumer = new QueueingBasicConsumer(channel);
-    channel.BasicConsume(WORK_QUEUE, true, consumer);
+{% highlight c# %}
+QueueingBasicConsumer consumer = new QueueingBasicConsumer(channel);
+channel.BasicConsume(WORK_QUEUE, true, consumer);
 
-    while (true) {
-        BasicDeliverEventArgs e = (BasicDeliverEventArgs) consumer.Queue.Dequeue();
-        channel.BasicAck(e.DeliveryTag);
+while (true) {
+    BasicDeliverEventArgs e = (BasicDeliverEventArgs) consumer.Queue.Dequeue();
+    channel.BasicAck(e.DeliveryTag);
 
-        var message = Encoding.UTF8.GetString(e.Body);
-        if (!DoSomething(message)) {
-            TryAgainLater(message);
-        }
+    var message = Encoding.UTF8.GetString(e.Body);
+    if (!DoSomething(message)) {
+        TryAgainLater(message);
     }
+}
+{% endhighlight %}
 
 #### Publish to RetryQueue on failure
 
-    var data = Encoding.UTF8.GetBytes(message)
-    channel.BasicPublish(RETRY_EXCHANGE, string.empty, null, data);
+{% highlight c# %}
+var data = Encoding.UTF8.GetBytes(message)
+channel.BasicPublish(RETRY_EXCHANGE, string.empty, null, data);
+{% endhighlight %}
 
 The code above will keep retrying indefinitely. It's a good idea to check against some sort of MAX_RETRY constant. If your messages are JSON strings, it's easy to encode the retry count in the message itself.
 
