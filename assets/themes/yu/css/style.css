@@ -43,10 +43,6 @@ h4 { font-size: 12pt; }
 
 h4.subtitle { color: #999; font-weight: normal; }
 
-code { font-size: 9pt; font-family: Menlo, Monaco, "Courier New", monospace; border: 1px solid #ccc; background-color: #eee; padding: 0.1em 0.3em; }
-pre { border: 1px solid #ccc; background-color: #eee; padding: 0.8em; white-space: pre-wrap; margin: 1em 0 1em 0; }
-pre code { border: 0; padding: 0; background-color: transparent; line-height: 0.8em; }
-
 /* --------------------------------------------------
 /* Post
 /* -------------------------------------------------- */
