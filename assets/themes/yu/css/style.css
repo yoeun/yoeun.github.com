@@ -51,6 +51,7 @@ h4.subtitle { color: #999; font-weight: normal; }
 .post h1 { margin: 0 0 0.2em 0; line-height: 1.2em; }
 .post h1 a { color: #333; }
 .post .date { font-size: 10pt; color: #666; }
+.post .comment_count { font-size: 10pt; }
 .post .content { margin: 10px 0 0 0; }
 .post p { margin: 1em 0 1em 0;}
 .post p:first-child { margin-top: 0;}
