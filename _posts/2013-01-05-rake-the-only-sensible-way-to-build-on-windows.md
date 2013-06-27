@@ -15,7 +15,7 @@ Instead, use [Rake](http://rake.rubyforge.org/).
 
 Rake is the Ruby version of Make and is used to build Ruby projects, such as Rails. It reads a `rakefile` which contains tasks to help you build, test, manage and deploy your code. 
 
-Rake is superior to NAnt or MSBuild because you don't need to mess around with XML. You get a simple-to-use DSL with full access to the entire Ruby language at your disposal. No more hacks to make NAnt do what you want. If you need to do something exotic, just write the code in pure Ruby. 
+Rake is superior to NAnt or MSBuild because you don't need to mess around with XML. You get a simple-to-use [DSL](http://en.wikipedia.org/wiki/Domain-specific_language) with full access to the entire Ruby language at your disposal. No more hacks to make NAnt do what you want. If you need to do something exotic, just write the code in pure Ruby. 
 
 #### I'm a .NET guy. Isn't Rake just for Ruby projects?
 
@@ -130,6 +130,6 @@ task :default => [ :clean, :build ]
 
 I've only scratched the surface... Rake and Albacore can do a lot more. 
 
-Rake isn't simply useful for compiling code and copying files. You can make a Rake task for anything scriptable, like sending a tweet. I often find it easier to create a `rakefile` than to write a ruby or batch script. 
+Rake isn't simply useful for compiling code and copying files. You can make a Rake task for anything scriptable, like sending a tweet. You can even create a cron job to execute a rake task. I often find it easier to create a `rakefile` than to write a ruby or batch script.
 
 Cheers!
